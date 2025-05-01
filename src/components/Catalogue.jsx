@@ -8,7 +8,7 @@ const Catalogue = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/items')
+    axios.get('https://tuk-tails-node.onrender.com/api/items')
       .then(res => setItems(res.data))
       .catch(err => console.error(err));
   }, []);

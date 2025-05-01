@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   const itemsPerPage = 5;
 
   const fetchItems = () => {
-    axios.get('http://localhost:5000/api/items').then(res => setItems(res.data));
+    axios.get('https://tuk-tails-node.onrender.com/api/items').then(res => setItems(res.data));
   };
 
   useEffect(() => {
@@ -25,14 +25,14 @@ const AdminDashboard = () => {
     formData.append('amount', form.amount);
     if (form.image) formData.append('image', form.image);
 
-    axios.post('http://localhost:5000/api/items', formData).then(() => {
+    axios.post('https://tuk-tails-node.onrender.com/api/items', formData).then(() => {
       fetchItems();
       setForm({ name: '', description: '', amount: '', image: null });
     });
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/items/${id}`).then(() => fetchItems());
+    axios.delete(`https://tuk-tails-node.onrender.com/api/items/${id}`).then(() => fetchItems());
   };
 
   const filteredItems = items
@@ -104,7 +104,7 @@ console.log(currentItems,"current");
         <tbody>
           {currentItems.map(item => (
             <tr key={item._id}>
-              <td><img src={`http://localhost:5000/uploads/${item.image}`} alt={item.name} height="60" /></td>
+              <td><img src={`https://tuk-tails-node.onrender.com/uploads/${item.image}`} alt={item.name} height="60" /></td>
               <td>{item.name}</td>
               <td>{item.description}</td>
               <td>${item.amount}</td>

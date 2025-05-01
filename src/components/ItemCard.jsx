@@ -1,7 +1,7 @@
 import React from 'react';
 import './ItemCard.css';
  const ItemCard = ({ item }) => {
-  const imageUrl = `http://localhost:5000/uploads/${item.image}`;
+  const imageUrl = `https://tuk-tails-node.onrender.com/uploads/${item.image}`;
 
   return (
     <div className="item-card">
