@@ -1,0 +1,46 @@
+.loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  }
+  
+  .spinner {
+    border: 18px solid #f3f3f3; /* Light gray */
+    border-top: 18px solid rgb(219, 177, 255); /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .loading-text {
+    font-size: 24px;
+    font-weight: bold;
+    color:  rgb(195, 134, 249);
+    text-align: center;
+    margin-top: 50px;
+    animation: typing 1.5s steps(10) infinite, blink 0.75s step-end infinite;
+  }
+  
+  .dots {
+    display: inline-block;
+    animation: blink-caret 0.75s step-end infinite;
+  }
+  
+  /* Animation for the typing effect */
+  @keyframes typing {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+  
+  /* Animation for the blinking effect of the dots */
+  @keyframes blink-caret {
+    50% { border-color: transparent; }
+  }
+  
